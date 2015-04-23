@@ -32,6 +32,8 @@ gem 'less-rails-bootstrap'
 # Bootstrap Gem for styling forms
 gem 'bootstrap_form'
 
+# A gem to provide user authentication
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

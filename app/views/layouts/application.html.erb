@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <% if user_signed_in? %>
+        <p class="alert alert-info inblock ten-px-margin">You are signed in as <%= current_user.email %></p>
+        <p class="option-links inblock">
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        </p>
+    <% else %>
+        <p class="alert alert-info inblock option-links ten-px-margin">
+            <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
+        </p>
+    <% end %>
     <div class="container">
         <div class="row">
             <div class="center-block col-md-7 top-margin text-center">

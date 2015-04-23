@@ -3,9 +3,19 @@
     float:none;
 }
 
+.inblock
+{
+    display: inline-block;   
+}
+
 .top-margin
 {
     margin-top: 40px;   
+}
+
+.ten-px-margin
+{
+    margin:10px;      
 }
 
 .complete .fa-check

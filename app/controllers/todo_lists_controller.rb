@@ -3,9 +3,20 @@ class TodoListsController < ApplicationController
 
   # GET /todo_lists
   # GET /todo_lists.json
-  def index
-    @todo_lists = TodoList.all
+#  def index
+#    
+#  end
+    
+def index
+  if user_signed_in?
+      @todo_lists = TodoList.all
+  else
+#      redirect_to :controller => 'home', :action => 'index', notice: "Must be Signed In"
+      flash[:alert] = "Must be Signed In"
+        redirect_to :controller => 'home', :action => 'index'
   end
+    
+end
 
   # GET /todo_lists/1
   # GET /todo_lists/1.json
