@@ -1,0 +1,37 @@
+<div class="row clearfix">
+    <% if todo_item.completed? %>   
+            <div class="todo_item col-md-8">
+                <p style="opacity: 0.4;"><strike><%= todo_item.content %></strike></p>
+            </div>
+            
+            <div class="options col-md-4">
+                <div class="completed col-md-6">
+                    <%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
+                    <i class="fa fa-check fa-2x"></i>
+                    <% end %>
+                </div>
+                <div class="trash col-md-6">
+                    <%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are you sure?" } do %>
+                    <i class="fa fa-times fa-2x"></i>
+                    <% end %>
+                </div>
+            </div>
+    <% else %>    
+        <div class="todo_item col-md-8">
+            <p><%= todo_item.content %></p>
+        </div>
+    
+        <div class="options col-md-4">
+            <div class="complete col-md-6">
+                <%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
+                <i class="fa fa-check fa-2x"></i>
+                <% end %>
+            </div>
+            <div class="trash col-md-6">
+                <%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are you sure?" } do %>
+                <i class="fa fa-times fa-2x"></i>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>

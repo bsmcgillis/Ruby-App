@@ -1,0 +1,4 @@
+<%= bootstrap_form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
+        <%= f.text_field :content, hide_label:true, placeholder: "New Todo Item" %>
+        <%= f.submit "Add New Item"%>
+<% end %>

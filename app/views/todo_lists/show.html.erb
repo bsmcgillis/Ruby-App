@@ -1,0 +1,29 @@
+<% if notice.class.name == "String" %>
+    <p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
+
+<div class="todo-list">
+    <h2 class="list-title">
+        <%= @todo_list.title %>
+    </h2>
+    <p class="list-description">
+        <%= @todo_list.description %>
+    </p>
+</div>
+
+<hr/>
+
+<div id="todo_items_wrapper">
+    <%= render @todo_list.todo_items %>
+    <div id="form">
+        <%= render "todo_items/form" %>
+    </div>
+</div>
+
+<hr/>
+
+<div class="option-links">
+    <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+    <%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: {confirm: "Are you sure?"} %> |
+    <%= link_to 'Back', todo_lists_path %>
+</div>
