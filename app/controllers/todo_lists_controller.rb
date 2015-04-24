@@ -9,7 +9,8 @@ class TodoListsController < ApplicationController
     
 def index
   if user_signed_in?
-      @todo_lists = TodoList.all
+#      @todo_lists = TodoList.all
+      @todo_lists = TodoList.where(user_id: current_user.id)
   else
 #      redirect_to :controller => 'home', :action => 'index', notice: "Must be Signed In"
       flash[:alert] = "Must be Signed In"
@@ -36,6 +37,7 @@ end
   # POST /todo_lists.json
   def create
     @todo_list = TodoList.new(todo_list_params)
+    @todo_list.user = current_user
 
     respond_to do |format|
       if @todo_list.save
