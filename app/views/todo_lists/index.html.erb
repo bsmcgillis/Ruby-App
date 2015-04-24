@@ -1,3 +1,9 @@
+<!-- 
+Author: Blake McGillis
+Date: April 23, 2015
+-->
+
+<!-- Display any notices -->
 <% if notice.class.name == "String" %>
     <p id="notice" class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -5,6 +11,7 @@
 <h1>Todo Lists</h1>
 <hr/>
 
+<!-- Display each todo list -->
 <% @todo_lists.each do |todo_list| %>
 <div class="todo-list">
     <h2 class="list-title">

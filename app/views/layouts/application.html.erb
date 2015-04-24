@@ -1,3 +1,8 @@
+<!-- 
+Author: Blake McGillis
+Date: April 23, 2015
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +12,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <!-- Display sign in options and information -->
     <% if user_signed_in? %>
         <p class="alert alert-info inblock ten-px-margin">You are signed in as <%= current_user.email %></p>
         <p class="option-links inblock">

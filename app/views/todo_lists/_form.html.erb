@@ -1,3 +1,9 @@
+<!-- 
+Author: Blake McGillis
+Date: April 23, 2015
+-->
+
+<!-- Utilizing bootstrap_form gem to nicely format forms with bootstrap -->
 <%= bootstrap_form_for(@todo_list, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
   <% if @todo_list.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">

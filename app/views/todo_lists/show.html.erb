@@ -1,7 +1,14 @@
+<!-- 
+Author: Blake McGillis
+Date: April 23, 2015
+-->
+
+<!-- Display any notices -->
 <% if notice.class.name == "String" %>
     <p id="notice" class="alert alert-success"><%= notice %></p>
 <% end %>
 
+<!-- Display this todo list title and description -->
 <div class="todo-list">
     <h2 class="list-title">
         <%= @todo_list.title %>
@@ -13,6 +20,7 @@
 
 <hr/>
 
+<!-- Display the existing todo list items for this list and render the form to add more items -->
 <div id="todo_items_wrapper">
     <%= render @todo_list.todo_items %>
     <div id="form">
